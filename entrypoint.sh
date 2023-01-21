@@ -21,7 +21,7 @@ if [ -n "$DOCKERFILE_PATH" ]; then
   fi
 fi
 
-docker build . -f $DOCKER_FILE_TO_USE -t native-build-image
+docker build . -f $DOCKER_FILE_TO_USE -t hoggo-backend-native
 
 RUNNER_NAME=$(docker run native-build-image ls /usr/src/app/target | grep .-runner)
 ID=$(docker create native-build-image)
